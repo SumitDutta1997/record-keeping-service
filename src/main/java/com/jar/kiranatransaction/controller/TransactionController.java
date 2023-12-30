@@ -26,7 +26,7 @@ public class TransactionController {
         return ResponseEntity.ok(transactionService.recordTransaction(TransactionRequestDto));
     }
 
-    @GetMapping("/daily-reports")
+    @GetMapping("/v1/daily-reports")
     public ResponseEntity<List<CustomerTransactionDto>> getDailyReports(@RequestParam LocalDate date) {
         log.info("Request received to fetch all transactions for date: {}", date);
         return ResponseEntity.ok(transactionService.getListOfTransactions(date));
