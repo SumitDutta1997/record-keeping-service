@@ -6,7 +6,7 @@ import com.jar.kiranatransaction.enums.TransactionType;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -23,10 +23,10 @@ public class Transaction {
     private Integer transactionId;
 
     @Column(name = "customer_id", nullable = false)
-    private String customerId;
+    private Integer customerId;
 
     @Column(name = "transaction_date", nullable = false)
-    private Date transactionDate;
+    private LocalDate transactionDate;
 
     @Column(name = "amount", nullable = false)
     private Double amount;

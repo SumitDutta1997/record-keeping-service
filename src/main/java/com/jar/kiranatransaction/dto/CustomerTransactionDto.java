@@ -3,9 +3,6 @@ package com.jar.kiranatransaction.dto;
 import com.jar.kiranatransaction.enums.Currency;
 import com.jar.kiranatransaction.enums.TransactionStatus;
 import com.jar.kiranatransaction.enums.TransactionType;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 @Data
@@ -14,22 +11,16 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class TransactionDto {
+public class CustomerTransactionDto {
 
-    @NotNull(message = "customerId is mandatory")
-    private Integer customerId;
-
-    @Min(value = 0, message = "amount must be positive")
+    private Integer transactionId;
     private Double amount;
-
-    @NotNull(message = "TransactionStatus is mandatory")
     private TransactionStatus transactionStatus;
-
-    @NotNull(message = "Currency is mandatory")
     private Currency currency;
-
-    @NotNull(message = "TransactionType is mandatory")
     private TransactionType transactionType;
-
     private String description;
+    private Integer customerId;
+    private String name;
+    private String phoneNumber;
+    private String email;
 }
